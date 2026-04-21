@@ -3,7 +3,7 @@ const router = express.Router();
 import { create, list, list2, listAllBlogsCategoriesTags, read, remove, update, relatedposts, listSearch, listByUser, allblogs, feeds, allblogslugs } from "../controllers/blog.js"
 import { requireSignin, adminMiddleware, authMiddleware, canUpdateDeleteBlog } from "../controllers/auth.js"
 import ABC from "../models/abc.js";
-import redisClient from "../redis.js";
+// import redisClient from "../redis.js";
 
 router.post('/blog', requireSignin, adminMiddleware, create);
 router.get('/blogs', list);
@@ -23,7 +23,7 @@ router.get('/:username/blogs', listByUser);
 router.delete('/user/blog/:slug', requireSignin, authMiddleware, canUpdateDeleteBlog, remove);
 router.patch('/user/blog/:slug', requireSignin, authMiddleware, canUpdateDeleteBlog, update);
 
-
+/*
 router.post("/testing-elasticache", async (req, res) => {
     try {
         const documents = [];
@@ -49,21 +49,6 @@ router.post("/testing-elasticache", async (req, res) => {
     }
 });
 
-// router.get("/abc", async (req, res) => {
-//     try {
-//         const data = await ABC.find().sort({ createdAt: -1 });
-
-//         res.status(200).json({
-//             count: data.length,
-//             data,
-//         });
-//     } catch (error) {
-//         res.status(500).json({
-//             message: "Error fetching data",
-//             error: error.message,
-//         });
-//     }
-// });
 router.get("/abc", async (req, res) => {
     try {
         const cacheKey = "abc_all";
@@ -103,6 +88,7 @@ router.get("/abc", async (req, res) => {
         });
     }
 });
+*/
 
 export default router
 
