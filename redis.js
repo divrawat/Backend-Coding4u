@@ -1,10 +1,11 @@
 // config/redis.js
 import { createClient } from "redis";
+import "dotenv/config.js";
 
 const redisClient = createClient({
     socket: {
-        host: "divyanshu-cache-t3ku13.serverless.aps1.cache.amazonaws.com:6379",
-        port: 6379,
+        host: process.env.REDIS_HOST,
+        port: Number(process.env.REDIS_PORT),
     },
 });
 
