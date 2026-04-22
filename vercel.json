@@ -1,6 +1,10 @@
 {
-  "version": 2,
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.js" }
-  ]
+   "version": 2,
+   "name": "Blog Website",
+   "builds": [
+      { "src": "index.js", "use": "@vercel/node", "config": { "nodeVersion": "18.x" } }
+   ],
+   "routes": [
+      { "src": "/(.*)", "dest": "/index.js" }
+   ]
 }
