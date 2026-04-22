@@ -45,7 +45,7 @@ app.use('/api', formRoutes);
 app.use('/api', ImageRoutes);
 app.use('/api', storyRoutes);
 
-app.get('/', (req, res) => { res.json("Backend index - Jenkins Auto Deploy"); });
+app.get('/', (req, res) => { res.json("Backend index - Jenkins Auto Deploy 00000"); });
 const port = process.env.PORT || 8000;
 app.listen(port, () => { console.log(`Server is running on port ${port}`); });
 
