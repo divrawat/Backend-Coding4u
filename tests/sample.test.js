@@ -5,6 +5,6 @@ describe("GET /", () => {
     it("should return backend message", async () => {
         const res = await request(app).get("/");
         expect(res.statusCode).toBe(200);
-        expect(res.body).toBe("Backend index 05 - Jenkins Auto Deploy Divyanshu");
+        expect(res.body).toBe("Backend index 050 - Jenkins Auto Deploy Divyanshu");
     });
 });
